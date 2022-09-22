@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-12">
+        <app-title-h1 type="danger" text="LISTA DE USUARIO"></app-title-h1>
+    </div>
+
+    <app-card-user [data]="user" *ngFor="let user of users" class="col-12 col-md-6 col-xl-3"></app-card-user>
+
+</div>

@@ -1,0 +1,11 @@
+<div class="dev-card" *ngIf="data">
+    <div class="dev-card__img">
+        <img src="{{data.avatar}}" alt="">
+    </div>
+    <div class="dev-card__info">
+        <h2>{{data.name}}</h2>
+        <h4>Edad: {{data.age}}</h4>
+        <p>{{data.description}}</p>
+        <p *ngIf="data.work">{{data.work}}</p>
+    </div>
+</div>
