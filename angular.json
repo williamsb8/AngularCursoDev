@@ -67,6 +67,14 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
             }
           },
           "defaultConfiguration": "production"
@@ -79,6 +87,9 @@
             },
             "development": {
               "browserTarget": "AngularCurso-DEV:build:development"
+            },
+            "dev": {
+              "browserTarget": "AngularCurso-DEV:build:dev"
             }
           },
           "defaultConfiguration": "development"
