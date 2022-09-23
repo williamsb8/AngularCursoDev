@@ -4,21 +4,23 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import * as fromComponents from './components';
-import { CardUserComponent } from './components/cards/card-user/card-user.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  declarations: [...fromComponents.components, CardUserComponent],
+  declarations: [...fromComponents.components],
   exports: [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
+    RouterModule,
     ...fromComponents.components
   ]
 })

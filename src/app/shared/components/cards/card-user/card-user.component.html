@@ -1,4 +1,4 @@
-<div class="dev-card" *ngIf="data">
+<div class="dev-card" *ngIf="data" routerLink="/panel/user/{{data.id}}">
     <div class="dev-card__img">
         <img src="{{data.avatar}}" alt="">
     </div>

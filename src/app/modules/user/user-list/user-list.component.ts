@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ICardUser } from '@shared//components/cards/card-user/icard-user.metadata';
+import { USERS_DATA } from '@data/constants/users.const';
+import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadata';
 
 @Component({
   selector: 'app-user-list',
@@ -8,33 +9,7 @@ import { ICardUser } from '@shared//components/cards/card-user/icard-user.metada
 })
 export class UserListComponent implements OnInit {
 
-  public users: ICardUser[] = [
-    {
-      name: 'William Morales',
-      age: 27,
-      description: 'Desarrollador fullstack',
-      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147144.png',
-      work: 'Freenlace'
-    },
-    {
-      name: 'Jose Manuel',
-      age: 17,
-      description: 'Desarrollador Backend',
-      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147144.png'
-    },
-    {
-      name: 'Rueben Charcape',
-      age: 20,
-      description: 'Desarrollador frontend',
-      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147144.png'
-    },
-    {
-      name: 'Rueben Charcape',
-      age: 20,
-      description: 'Desarrollador frontend',
-      avatar: 'https://cdn-icons-png.flaticon.com/512/147/147144.png'
-    }
-  ]
+  public users: ICardUser[] = USERS_DATA;
     
   constructor() { }
 

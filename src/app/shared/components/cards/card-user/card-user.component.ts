@@ -7,7 +7,7 @@ import { ICardUser } from './icard-user.metadata';
   styleUrls: ['./card-user.component.scss']
 })
 export class CardUserComponent implements OnInit {
-  @Input() data: ICardUser | undefined;
+  @Input() data!: ICardUser;
   constructor() { }
 
   ngOnInit(): void {
