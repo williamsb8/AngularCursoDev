@@ -22,6 +22,11 @@ export class UserService extends ApliClass {
       .pipe(
         map(r => {
           response.data = r;
+          r.map(i => {
+            if (i.gender === '') {
+              i.gender = 'S/N';
+            } 
+          })
           return response;
         }),
         catchError(() => of(response))

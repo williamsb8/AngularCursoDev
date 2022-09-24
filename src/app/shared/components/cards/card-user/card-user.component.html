@@ -1,10 +1,17 @@
 <div class="dev-card" *ngIf="data" routerLink="/panel/user/{{data.id}}">
     <div class="dev-card__img">
-        <img src="{{data.avatar}}" alt="">
+        <img [src]="data.avatar" alt="">
     </div>
     <div class="dev-card__info">
         <h2>{{data.name}}</h2>
         <h4>Edad: {{data.age}}</h4>
+        <p>Genero: 
+            <ng-container [ngSwitch]="data.gender">
+                <span *ngSwitchCase="'F'">Femenino</span>
+                <span *ngSwitchCase="'M'">Masculino</span>
+                <span *ngSwitchDefault>{{ data.gender }}</span>
+            </ng-container>
+        </p>
         <p>{{data.description}}</p>
         <p *ngIf="data.work">{{data.work}}</p>
     </div>
