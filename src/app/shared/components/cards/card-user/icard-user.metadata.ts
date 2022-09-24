@@ -1,5 +1,5 @@
 export interface ICardUser {
-    id:number;
+    id?: number;
     avatar: string;
     name: string;
     age: number;

@@ -21,9 +21,9 @@
       "dom"
     ],
     "paths": {
-      "@app/*": ["app/core/*"],
+      "@core/*": ["app/core/*"],
       "@shared/*": ["app/shared/*"],
-      "@components/*": ["app/components/*"],
+      "@components/*": ["app/shared/components/*"],
       "@env/*": ["environments/*"],
       "@modules/*": ["app/modules/*"],
       "@data/*": ["app/data/*"],

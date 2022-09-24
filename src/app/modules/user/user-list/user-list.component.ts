@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { USERS_DATA } from '@data/constants/users.const';
+import { UserService } from '@data/services/api/user.service';
 import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadata';
 
 @Component({
@@ -9,9 +10,17 @@ import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadat
 })
 export class UserListComponent implements OnInit {
 
-  public users: ICardUser[] = USERS_DATA;
+  public users: ICardUser[] = []; // USERS_DATA;
     
-  constructor() { }
+  constructor(
+    private userService: UserService
+  ) {
+    this.userService.getAllUsers().subscribe( r => {
+      if (!r.error) {
+        this.users = r.data;
+      }
+    });
+  }
 
   ngOnInit(): void {
   }
