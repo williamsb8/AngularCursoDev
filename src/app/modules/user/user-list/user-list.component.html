@@ -13,6 +13,13 @@
         <app-title-h1 type="danger" text="LISTA DE USUARIOS"></app-title-h1>
     </div>
 
-    <app-card-user [data]="user" *ngFor="let user of users" class="col-12 col-md-6 col-xl-3"></app-card-user>
+    <ng-container *ngIf="users; else elseUsersLoader;">
+        <app-card-user [data]="user" *ngFor="let user of users" class="col-12 col-md-6 col-xl-3"></app-card-user>
+    </ng-container>
 
+    <!-- Init loader component -->
+    <ng-template #elseUsersLoader>
+        <app-card-loader class="col-12 col-md-6 col-xl-3" [bars]=4 [imageSize]="100" *ngFor="let i of [0,1,2,3,4,5,6]">
+        </app-card-loader>
+    </ng-template>
 </div>

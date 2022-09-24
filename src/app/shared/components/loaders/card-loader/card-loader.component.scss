@@ -1,0 +1,28 @@
+.dev-card-loader {
+    width: 100%;
+    &__img, &__text {
+        background: #DCDADA;
+        animation: load 1s infinite linear;
+    }
+    &__img {
+        border-radius: 100%;
+    }
+    &__text {
+        border-radius: 10px;
+        margin: 7px;
+    }
+}
+
+@keyframes load {
+    0% {
+        background: #DCDADA;
+    }
+
+    50% {
+        background: #E4E4E4;
+    }
+    
+    100% {
+        background: #DCDADA;
+    }
+}

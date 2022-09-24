@@ -1,0 +1,6 @@
+<div class="dev-card-loader">
+    <div class="dev-card-loader__img" [ngStyle]="finalStyleImage">
+        <div class="dev-card-loader__text" [ngStyle]="{'height': finalHeightBar ,'width': item.width}"
+            *ngFor="let item of totalBars;"></div>
+    </div>
+</div>
