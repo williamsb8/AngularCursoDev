@@ -1,0 +1,6 @@
+<button class="btn btn-danger mr-2" (click)="showError()">Mostrar Error</button>
+<button class="btn btn-success" (click)="showSuccess()">Mostrar Success</button>
+
+<div class="dev-error" [ngStyle]="style" *ngIf="isShow">
+    {{msg}}
+</div>
