@@ -11,7 +11,7 @@ const routes: Routes = [
     component: UserListComponent
   },
   {
-    path: 'ngStyle',
+    path: 'directivas',
     component: DefaultUserComponent
   },
   {

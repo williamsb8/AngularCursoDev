@@ -5,3 +5,44 @@
     border-radius: 5px;
     color: black;
 }
+
+.dev-card{
+    border-width: 1px;
+    max-width: 350px;
+    min-width: 250px;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: 0.5s all ease-in;
+    &:hover{
+        transform: scale(1.05);
+    }
+    &__title {
+        border-bottom: 1px solid #fff;
+        margin-bottom: 0.5rem;
+    }
+    &__body {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+    &__actions {
+        display: flex;
+        justify-content: center;
+    }
+    &-disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
+        &:hover{
+            transform: none;
+        }
+    }
+    &-primary {
+        background: rgb(70, 21, 202);
+        color: #fff;
+    }
+    &-secondary{
+        background: rgb(209,206,206);
+        color: #000;
+    }
+}
