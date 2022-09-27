@@ -10,7 +10,8 @@
 
 <div class="row">
     <div class="col-12 text-center">
-        <app-title-h1 type="danger" text="LISTA DE USUARIOS"></app-title-h1>
+        <app-title-h1 type="danger" text="LISTA DE USUARIOS" [priceSoles]="priceSoles"></app-title-h1>
+        <button class="btn btn-primary" (click)="addAmount()">Agregar 10 Soles</button>
     </div>
 
     <ng-container *ngIf="users; else elseUsersLoader;">

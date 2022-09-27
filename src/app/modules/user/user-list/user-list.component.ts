@@ -1,31 +1,49 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CAROUSEL_DATA_ITEMS } from '@data/constants/carousel.const';
 import { USERS_DATA } from '@data/constants/users.const';
 import { UserService } from '@data/services/api/user.service';
 import { ICardUser } from '@shared/components/cards/card-user/icard-user.metadata';
 import { ICarouselItem } from '@shared/components/carousel/icarousel-item.metadata';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss']
 })
-export class UserListComponent implements OnInit {
+export class UserListComponent implements OnInit, OnDestroy {
 
-  public carouselData: ICarouselItem[] = CAROUSEL_DATA_ITEMS;
+  public carouselData: ICarouselItem[]; //= CAROUSEL_DATA_ITEMS;
   public users: ICardUser[] = []; // USERS_DATA;
+  public userSubscription: Subscription = new Subscription;
+  public priceSoles: number;
     
   constructor(
     private userService: UserService
   ) {
-    this.userService.getAllUsers().subscribe( r => {
-      if (!r.error) {
-        this.users = r.data;
-      }
-    });
+    this.carouselData = CAROUSEL_DATA_ITEMS;
+    this.priceSoles = 0;
   }
 
   ngOnInit(): void {
+    this.getUser();
+  }
+
+  addAmount() {
+    this.priceSoles += 10;
+  }
+
+  getUser(): void {
+    this.userSubscription = this.userService
+      .getAllUsers()
+      .subscribe( r => this.users = (r.error) ? [] : r.data );
+  }
+
+  ngOnDestroy(): void {
+    if(this.userSubscription) {
+      console.log('unsubscribe');
+      this.userSubscription.unsubscribe();
+    }
   }
 
 }
