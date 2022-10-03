@@ -24,7 +24,7 @@ export class UserListComponent implements AfterViewInit, OnInit, OnDestroy {
   ) {
     this.carouselData = CAROUSEL_DATA_ITEMS;
     this.priceSoles = 0;
-    this.obj = [{id: 1, name: 'primero', joinDate: 1599935113003}];
+    //this.obj = [{id: 1, name: 'primero', joinDate: 1599935113003}];
   }
 
   ngOnInit(): void {

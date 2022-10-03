@@ -13,6 +13,7 @@
                 <h3 class="text-secondary border-bottom pb-3" *ngIf="currentUser[0].work">Puesto: {{currentUser[0].work}}</h3>
                 <p class="text-secondary">{{ currentUser[0].description }}</p>
             </div> -->
+            <p>{{currentUser | json }}</p>
         </div>
     </div>
     <ng-template #loaderComponent>
