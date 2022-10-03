@@ -3,3 +3,9 @@
     <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
+
+<ng-container *ngIf="isLoading">
+    <div class="dev-loader">
+        <img [src]="loader" alt="">
+    </div>
+</ng-container>
